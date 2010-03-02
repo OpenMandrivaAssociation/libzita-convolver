@@ -1,5 +1,5 @@
 %define name_base       zita-convolver
-%define name            %mklibname %name_base
+%define name            libzita-convolver
 %define version         2.0.0
 %define release         %mkrel 1 
 %define lib_major       2
@@ -68,6 +68,7 @@ Development files needed to build applications against libzita-convolver.
 %setup -q -n %name_base-%{version}
 cd libs
 perl -pi -e 's/PREFIX =/#PREFIX =/g' Makefile
+perl -pi -e 's/CPPFLAGS \+= -march=i686//g' Makefile
 perl -pi -e 's/ldconfig//g' Makefile
 
 %build
