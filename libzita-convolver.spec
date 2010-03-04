@@ -68,12 +68,12 @@ Development files needed to build applications against libzita-convolver.
 %setup -q -n %name_base-%{version}
 cd libs
 perl -pi -e 's/PREFIX =/#PREFIX =/g' Makefile
-perl -pi -e 's/CPPFLAGS \+= -march=i686//g' Makefile
+perl -pi -e 's/CPPFLAGS \+=/#CPPFLAGS \+=/g' Makefile
 perl -pi -e 's/ldconfig//g' Makefile
 
 %build
 cd libs
-make 
+CPPFLAGS="%{optflags} -fPIC -mmmx -msse -mfpmath=sse -ffast-math" make 
 
 %install
 rm -rf %{buildroot}
