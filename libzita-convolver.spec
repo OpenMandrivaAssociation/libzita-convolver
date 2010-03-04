@@ -1,7 +1,7 @@
 %define name_base       zita-convolver
 %define name            libzita-convolver
 %define version         2.0.0
-%define release         %mkrel 1 
+%define release         %mkrel 2 
 %define lib_major       2
 %define lib_name        %mklibname %name_base %{lib_major} 
 %define lib_name_devel  %mklibname %name_base -d
