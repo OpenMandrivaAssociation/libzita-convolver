@@ -69,6 +69,7 @@ cd libs
 perl -pi -e 's/PREFIX =/#PREFIX =/g' Makefile
 perl -pi -e 's/CPPFLAGS \+=/#CPPFLAGS \+=/g' Makefile
 perl -pi -e 's/ldconfig//g' Makefile
+perl -pi -e 's/-march=native//g' Makefile
 
 %build
 cd libs
