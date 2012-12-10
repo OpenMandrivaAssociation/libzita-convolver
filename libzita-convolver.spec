@@ -82,3 +82,23 @@ PREFIX=%{buildroot}%{_prefix} make install
 
 %clean
 rm -rf %{buildroot}
+
+
+%changelog
+* Sun Apr 15 2012 Frank Kober <emuse@mandriva.org> 3.1.0-1
++ Revision: 791105
+- removed march CXX flag from Makefile
+- update to new version 3.1.0
+  o major is 3
+
+* Thu Mar 04 2010 Frank Kober <emuse@mandriva.org> 2.0.0-2mdv2011.0
++ Revision: 514246
+- rebuild
+- use optimization flags
+
+* Tue Mar 02 2010 Frank Kober <emuse@mandriva.org> 2.0.0-1mdv2010.1
++ Revision: 513698
+- import libzita-convolver
+- import libzita-convolver
+
+
