@@ -9,7 +9,7 @@
 Name:           %{name}
 Summary:        Audio convolution engine library needed by jconvolver
 Version:        %{version}
-Release:        %{release}
+Release:	1
 
 Source:         http://www.kokkinizita.net/linuxaudio/downloads/%name_base-%{version}.tar.bz2
 URL:            http://www.kokkinizita.net/linuxaudio/
