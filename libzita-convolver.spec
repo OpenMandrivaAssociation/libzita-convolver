@@ -63,6 +63,13 @@ Development files needed to build applications against libzita-convolver.
 %prep
 %setup -q -n %name_base-%{version}
 
+# No need to call ldconfig during packaging
+sed -i '\|ldconfig|d' source/Makefile
+# Preserve timestamps
+sed -i 's|install |install -p |' source/Makefile
+# Force optflags
+sed -i 's|-march=native|%{optflags}|' source/Makefile
+
 %build
 pushd source
 %make_build  PREFIX=%{_prefix} 
