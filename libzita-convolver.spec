@@ -1,21 +1,18 @@
 %define name_base       zita-convolver
-%define name            libzita-convolver
-%define version         3.1.0
-%define release         3
 %define lib_major       3
 %define lib_name        %mklibname %name_base %{lib_major}
 %define lib_name_devel  %mklibname %name_base -d
 
-Name:           %{name}
+Name:           libzita-convolver
 Summary:        Audio convolution engine library needed by jconvolver
-Version:        %{version}
-Release:	1
+Version:        4.0.3
+Release:        1
 
-Source:         http://www.kokkinizita.net/linuxaudio/downloads/%name_base-%{version}.tar.bz2
-URL:            http://www.kokkinizita.net/linuxaudio/
+Source:         https://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-convolver-%{version}.tar.bz2
+URL:            https://kokkinizita.linuxaudio.org/linuxaudio/
 License:        LGPLv2
 Group:          Sound
-BuildRequires:  fftw3-devel
+BuildRequires:  pkgconfig(fftw3)
 
 %description
 Convolution engine library for use with jconvolver. Jconvolver is a
