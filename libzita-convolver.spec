@@ -1,5 +1,5 @@
 %define name_base       zita-convolver
-%define lib_major       3
+%define lib_major       4
 %define lib_name        %mklibname %name_base %{lib_major}
 %define lib_name_devel  %mklibname %name_base -d
 
@@ -62,23 +62,17 @@ Development files needed to build applications against libzita-convolver.
 
 %prep
 %setup -q -n %name_base-%{version}
-cd libs
-perl -pi -e 's/PREFIX =/#PREFIX =/g' Makefile
-perl -pi -e 's/CPPFLAGS \+=/#CPPFLAGS \+=/g' Makefile
-perl -pi -e 's/ldconfig//g' Makefile
-perl -pi -e 's/-march=native//g' Makefile
 
 %build
-cd libs
-CPPFLAGS="%{optflags} -fPIC -mmmx -msse -mfpmath=sse -ffast-math" make
+pushd source
+%make_build  PREFIX=%{_prefix} 
+popd
 
 %install
-rm -rf %{buildroot}
-cd libs
-PREFIX=%{buildroot}%{_prefix} make install
+pushd source
+%make_install DESTDIR=%{buildroot} PREFIX=%{_prefix} LIBDIR=%{_libdir}
+popd
 
-%clean
-rm -rf %{buildroot}
 
 
 %changelog
