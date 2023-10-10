@@ -6,7 +6,7 @@
 Name:           libzita-convolver
 Summary:        Audio convolution engine library needed by jconvolver
 Version:        4.0.3
-Release:        1
+Release:        2
 
 Source:         https://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-convolver-%{version}.tar.bz2
 URL:            https://kokkinizita.linuxaudio.org/linuxaudio/
